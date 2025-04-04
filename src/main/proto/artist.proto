@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package artist;
+
+option java_multiple_files = true;
+option java_package = "fiuza.maicon.artist";
+
+
+enum MusicalGenreProto {
+  RAP = 0;
+  PAGODE = 1;
+  SAMBA = 2;
+  ARROCHA = 3;
+  ROCK = 4;
+  FORRO = 5;
+}
+
+message ArtistProto {
+  int32 artist_id = 1;
+  string nome = 2;
+  MusicalGenreProto musical_genre = 3;
+  string most_famous_song = 4;
+}
+
+
+message CreateArtistRequest {
+  string nome = 2;
+  MusicalGenreProto musical_genre = 3;
+  string most_famous_song = 4;
+}
+
+message CreateArtistResponse {
+  int32 artist_id = 1;
+  string message = 2;
+}
+
+message GetArtistRequest {
+  int32 artist_id = 1;
+}
+
+message GetArtistResponse {
+    ArtistProto artist = 1;
+}
+
+service ArtistService {
+  rpc CreateArtist(CreateArtistRequest) returns (CreateArtistResponse);
+  rpc GetArtist(GetArtistRequest) returns (GetArtistResponse);
+}
