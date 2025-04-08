@@ -22,7 +22,8 @@
     <junit.version>5.10.3</junit.version>
     <surefire.version>3.3.1</surefire.version>
 </properties>
-<dependencies>        <!-- grpc / proto related dependencies -->
+<dependencies>
+    <!-- grpc / proto related dependencies -->
     <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-netty-shaded</artifactId>
@@ -54,7 +55,26 @@
         <artifactId>jackson-databind</artifactId>
         <version>${jackson.version}</version>
     </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <version>3.2.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>3.2.5</version>
+    </dependency>
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>8.3.0</version>
+        <scope>runtime</scope>
+    </dependency>
 </dependencies>
+
+
 <build>
     <extensions>
         <extension>
